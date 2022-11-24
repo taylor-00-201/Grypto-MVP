@@ -1,25 +1,13 @@
-import { useState } from "react"
+import { Outlet, Route, Routes } from "react-router-dom"
 
-export const UserViews = () => {
 
-        const [apiState, setApiState] = useState([])
-        
-        const fetchApiFunc = () => {
-            fetch(`https://api.coingecko.com/api/v3/coins/list?include_platform=true`)
-                .then (response => response.json())
-                .then ((response) => {
-                 const apiArray = response
-                    setApiState(apiArray)
-                   console.log(apiState)
-                })
-             }
 
-             fetchApiFunc()
-
-             const jsxApi = apiState
-
-     return(
-        <p>{jsxApi}</p>
-        )
-        
+const userViews = () => {
+	return (
+      <div className="gryptoMain"> 
+          <routes>
+            <Route path="tickets" element={ <CryptoHome/> }
+          </routes>
+      </div>
+   )
 }
