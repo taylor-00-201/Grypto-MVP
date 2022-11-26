@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css"
 
 export const Login = () => {
@@ -18,12 +17,12 @@ export const Login = () => {
                     localStorage.setItem("crypto_user", JSON.stringify({
                         id: user.id,
                         email: user.email
-                    }))
+                    }));
 
-                    navigate("/")
+                    navigate("/Cryptohome");
                 }
                 else {
-                    window.alert("Invalid login")
+                    window.alert("Invalid login");
                 }
             })
     }
@@ -32,7 +31,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Honey Rae Repairs</h1>
+                    <h1>Grypto</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
