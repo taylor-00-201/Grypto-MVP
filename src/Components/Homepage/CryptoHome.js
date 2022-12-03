@@ -30,9 +30,6 @@ export const CryptoHome = ({ coinData, setCoinData }) => {
       )}
 
 
-      <div>
-      <header>Select Your Coin</header>
-      </div>
     
     </div>
   );
