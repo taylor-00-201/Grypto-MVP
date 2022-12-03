@@ -1,33 +1,40 @@
 {
-    "user": [
-      {
-        "id": 1,
-        "email": "taylor00201@gmail.com",
-        "nameFirst": "Taylor",
-        "nameLast": "Evans",
-        "password": "asdf1234"
-      }
-    ],
-    "userCrypto": [
-      {
-        "id": 1,
-        "cryptoId": "",
-        "userId": 1
-      }
-    ],
-    "crypto": [
-      {
-        "id": 1,
-        "name": "",
-        "ticker": 72.47
-      }
-    ],
-    "cryptoValue": [
-      {
-        "id": 1,
-        "cryptoId": 3,
-        "value": 1.21,
-        "timeStamp": "Fri Apr 29 2022 14:02:20 GMT-0500 (Central Daylight Time)"
-      }
-    ]
-  }
+  "user": [
+    {
+      "id": 1,
+      "email": "taylor00201@gmail.com",
+      "nameFirst": "Taylor",
+      "nameLast": "Evans",
+      "password": "asdf1234"
+    },
+    {
+      "email": "cdickey@gmail.com",
+      "fullName": "Corwin Dickey",
+      "isStaff": false,
+      "id": 2
+    }
+  ],
+  "userCrypto": [
+    {
+      "id": 1,
+      "cryptoId": "",
+      "userId": 1
+    }
+  ],
+  "crypto": [
+    {
+      "id": 1,
+      "name": "",
+      "ticker": 72.47
+    }
+  ],
+  "cryptoValue": [
+    {
+      "id": 1,
+      "cryptoId": 3,
+      "value": 1.21,
+      "timeStamp": "Fri Apr 29 2022 14:02:20 GMT-0500 (Central Daylight Time)"
+    }
+
+  ]
+}

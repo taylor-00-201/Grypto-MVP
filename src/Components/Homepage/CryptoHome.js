@@ -1,35 +1,39 @@
 import { useEffect, useState } from "react";
+import CoinContainer from "./HomeDashboard";
 
-export const CryptoHome = () => {
+export const CryptoHome = ({ coinData, setCoinData }) => {
   const [cryptoMainState, setCryptoState] = useState([]);
+  const [cryptoMainStateFilter, setCryptoStateFilter] = useState([]);
+
+  const filteredData = cryptoMainStateFilter;
 
   useEffect(() => {
-    const response = fetch(
-      `https://api.coinlore.net/api/tickers/`,
-      
-    ).then((data) => {
-      
-
-      const pop = data.json()
-      console.log(pop)
-      setCryptoState(pop);
-    });
+    updateCryptoData();
   }, []);
+
+  const updateCryptoData = () => {
+    fetch("https://api.coinlore.net/api/tickers/")
+      .then((response) => response.json())
+      .then((data) => setCoinData(data));
+    console.log(coinData);
+  };
 
   return (
     <div>
-       <header></header>
-       <coin-container coins={cryptoMainState.coins}></coin-container>
-//     <sidebar><div className="coincalc"></div></sidebar>
-//
+      <header>Your Coins</header>
+      <button onClick={updateCryptoData}>Click Me!</button>
+      {coinData === null ? null : (
+        <div>
+          <CoinContainer singleCoin={coinData.data[0]} />
+          <CoinContainer singleCoin={coinData.data[1]} />
+        </div>
+      )}
+
+
+      <div>
+      <header>Select Your Coin</header>
+      </div>
+    
     </div>
   );
 };
-
-// const cryproDash = ()  => {
-//     <div>
-//       <header></header>
-//       <currency-calculator></currency-calculator>
-//       <coin-container coins={cryptoMainState.coins}></coin-container>
-//     </div>
-// }
