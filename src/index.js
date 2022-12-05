@@ -4,13 +4,13 @@ import { UserViews } from "./Components/Views/UserViews";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { ApplicationViews } from "./Components/Views/ApplicationViews";
+import { App } from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ApplicationViews />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
