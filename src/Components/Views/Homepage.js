@@ -8,23 +8,31 @@ import { DataAPIUpdate } from "./DataAPIUpdate";
 
 export const Homepage = () => {
   const [data, setData] = useState([]);
-  const [selectedCoin, setSelectedCoin] = useState([]);
+  const [selectedCoins, setSelectedCoins] = useState([]);
 
   const navigate = useNavigate;
 
   useEffect(() => {
     fetch(`https://api.coinlore.net/api/tickers/`).then((response) =>
       response.json().then((data) => {
-        var coinData = data.data.map((coin) => ({
+        const coinData = data.data.map((coin) => ({
           coinName: coin.name,
           coinPrice: coin.price_usd,
         }));
         setData(coinData);
       })
     );
+    // do api call here to retrieve the user's coins
+    // const userData = apiCallToGetData
+    // setSelectedCoins(userData);
   }, []);
 
-  console.log(data);
+  const mySelectChange = (event) => {
+    const coinValue = event.target.value;
+    setSelectedCoins(...selectedCoins, coinValue);
+  };
+
+  console.log(selectedCoins);
 
   return (
     <div>
@@ -33,14 +41,18 @@ export const Homepage = () => {
         <DataAPIUpdate />
       </div>
       <div>
-        <select>
-          <option>{data.map((coinName) => )}</option>
+        <select onChange={mySelectChange}>
+          {data.map((coin) => (
+            <option value={coin.coinName} key={coin.coinName}>
+              {coin.coinName}
+            </option>
+          ))}
         </select>
-        <div className="coinDisplay">
-          <h1>{selectedCoin.name}</h1>
-          <h1>{selectedCoin.price_usd}</h1>
-        </div>
       </div>
     </div>
   );
 };
+
+//recreate component (coin display)
+
+//map over selected component for every one of my selected coins
