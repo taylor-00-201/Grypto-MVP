@@ -14,7 +14,30 @@
       "id": 2
     }
   ],
-  "SavedCrypto": [],
+  "SavedCrypto": [
+    [],
+    [
+      {
+        "coinName": "Binance USD",
+        "coinPrice": "1.00"
+      }
+    ],
+    [
+      {
+        "coinName": "Binance USD",
+        "coinPrice": "1.00"
+      },
+      {
+        "coinName": "Cardano",
+        "coinPrice": "0.303127"
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
   "crypto": [
     [
       {

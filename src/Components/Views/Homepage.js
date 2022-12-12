@@ -3,12 +3,12 @@
 // create json server database
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AllCoinsView } from "./AllCoinsView";
 import { DataAPIUpdate } from "./DataAPIUpdate";
 
 export const Homepage = () => {
   const [data, setData] = useState([]);
   const [selectedCoins, setSelectedCoins] = useState([]);
+  const [jsonServerApiCoins, setjsonServerApiCoins] = useState([]);
 
   const navigate = useNavigate;
 
@@ -22,14 +22,48 @@ export const Homepage = () => {
         setData(coinData);
       })
     );
-    // do api call here to retrieve the user's coins
-    // const userData = apiCallToGetData
-    // setSelectedCoins(userData);
+
+    function jsonServerApiCoinsFetch() {
+      fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
+        response.json().then((data) => setjsonServerApiCoins(data))
+      );
+    }
+
+    jsonServerApiCoinsFetch();
+    console.log(setjsonServerApiCoins)
   }, []);
 
   const mySelectChange = (event) => {
     const coinValue = event.target.value;
-    setSelectedCoins(...selectedCoins, coinValue);
+    console.log(data);
+    const selectedCoin = data.filter((coin) => coin.coinName === coinValue)[0];
+    const mergedUpdatedApiData = selectedCoins;
+
+    const updatedSelectedCoins = [...selectedCoins, selectedCoin];
+    setSelectedCoins(updatedSelectedCoins);
+
+    console.log(selectedCoins)
+
+const mySelectApiPost = async (mergedUpdatedApiData) => {
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(mergedUpdatedApiData),
+      };
+
+      await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
+    };
+
+    function jsonServerApiCoinsFetchTwo() {
+      fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
+        response.json().then((data) => setjsonServerApiCoins(data))
+      );
+    }
+
+    mySelectApiPost(mergedUpdatedApiData);
+    jsonServerApiCoinsFetchTwo();
   };
 
   console.log(selectedCoins);
@@ -43,11 +77,18 @@ export const Homepage = () => {
       <div>
         <select onChange={mySelectChange}>
           {data.map((coin) => (
-            <option value={coin.coinName} key={coin.coinName}>
-              {coin.coinName}
-            </option>
+            <option value={coin.coinName}>{coin.coinName}</option>
           ))}
         </select>
+        <div>
+          {jsonServerApiCoins.map((coin) => (
+            <div key={coin.coinName + coin.coinPrice}>
+              <h1>{coin.coinName}</h1>
+              <h1>{coin.coinPrice}</h1>
+            </div>
+          ))}
+          <div className="delete">Delete Coin</div>
+        </div>
       </div>
     </div>
   );

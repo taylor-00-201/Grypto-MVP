@@ -6,14 +6,33 @@ export const DataAPIUpdate = () => {
   const updateCryptoData = () => {
     fetch("https://api.coinlore.net/api/tickers/")
       .then((response) => response.json())
-      .then((data) => handleCryptoDataUpdate(data));
+      .then((data) => setCryptoData(data));
   };
 
+  const apiDataVar = cryptoData;
+
   const handleCryptoDataUpdate = (data) => {
-    setCryptoData(data.data);
+    apiPost(apiDataVar)
+    setCryptoData(apiDataVar);
+  };
+
+  const apiPost = async (apiDataVar) => {
+    apiDataVar.preventDefault();
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(fetch),
+    };
+
+    await fetch(`http://localhost:8088/crypto`, fetchOptions);
   };
 
   const appTrue = true;
 
-  return <button onClick={() => updateCryptoData()}>Click To Update</button>;
+  return <button onClick={() => handleCryptoDataUpdate()}>Click To Update</button>;
 };
+
+ 
