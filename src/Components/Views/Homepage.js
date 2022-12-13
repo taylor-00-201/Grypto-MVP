@@ -10,7 +10,7 @@ export const Homepage = () => {
   const [selectedCoins, setSelectedCoins] = useState([]);
   const [jsonServerApiCoins, setjsonServerApiCoins] = useState([]);
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://api.coinlore.net/api/tickers/`).then((response) =>
@@ -30,27 +30,28 @@ export const Homepage = () => {
     }
 
     jsonServerApiCoinsFetch();
-    console.log(setjsonServerApiCoins)
+    console.log(setjsonServerApiCoins);
   }, []);
 
   const mySelectChange = (event) => {
     const coinValue = event.target.value;
     console.log(data);
     const selectedCoin = data.filter((coin) => coin.coinName === coinValue)[0];
-    const mergedUpdatedApiData = selectedCoins;
-
     const updatedSelectedCoins = [...selectedCoins, selectedCoin];
-    setSelectedCoins(updatedSelectedCoins);
+    
+    // setSelectedCoins(updatedSelectedCoins);
 
-    console.log(selectedCoins)
+    // console.log(selectedCoins);
 
-const mySelectApiPost = async (mergedUpdatedApiData) => {
+    // const selectedCoinsVar = selectedCoins;
+
+    const mySelectApiPost = async () => {
       const fetchOptions = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(mergedUpdatedApiData),
+        body: JSON.stringify(updatedSelectedCoins[0]),
       };
 
       await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
@@ -62,7 +63,7 @@ const mySelectApiPost = async (mergedUpdatedApiData) => {
       );
     }
 
-    mySelectApiPost(mergedUpdatedApiData);
+    mySelectApiPost();
     jsonServerApiCoinsFetchTwo();
   };
 

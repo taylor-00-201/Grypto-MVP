@@ -15,28 +15,26 @@
     }
   ],
   "SavedCrypto": [
-    [],
-    [
-      {
-        "coinName": "Binance USD",
-        "coinPrice": "1.00"
-      }
-    ],
-    [
-      {
-        "coinName": "Binance USD",
-        "coinPrice": "1.00"
-      },
-      {
-        "coinName": "Cardano",
-        "coinPrice": "0.303127"
-      }
-    ],
-    [],
-    [],
-    [],
-    [],
-    []
+    {
+      "id": 1,
+      "coinName": "Binance USD",
+      "coinPrice": "1.00"
+    },
+    {
+      "coinName": "Dogecoin",
+      "coinPrice": "0.090193",
+      "id": 2
+    },
+    {
+      "coinName": "Binance Coin",
+      "coinPrice": "272.68",
+      "id": 3
+    },
+    {
+      "coinName": "XRP",
+      "coinPrice": "0.383244",
+      "id": 4
+    }
   ],
   "crypto": [
     [
