@@ -21,39 +21,14 @@
       "coinPrice": "1.00"
     },
     {
-      "coinName": "XRP",
-      "coinPrice": "0.393187",
+      "coinName": "Binance Coin",
+      "coinPrice": "273.25",
       "id": 2
     },
     {
-      "coinName": "XRP",
-      "coinPrice": "0.393187",
+      "coinName": "Litecoin",
+      "coinPrice": "77.79",
       "id": 3
-    },
-    {
-      "coinName": "USD Coin",
-      "coinPrice": "0.999961",
-      "id": 4
-    },
-    {
-      "coinName": "USD Coin",
-      "coinPrice": "0.999961",
-      "id": 5
-    },
-    {
-      "coinName": "Dogecoin",
-      "coinPrice": "0.091298",
-      "id": 6
-    },
-    {
-      "coinName": "Avalanche",
-      "coinPrice": "13.80",
-      "id": 7
-    },
-    {
-      "coinName": "UNUS SED LEO",
-      "coinPrice": "3.71",
-      "id": 8
     }
   ],
   "crypto": [
