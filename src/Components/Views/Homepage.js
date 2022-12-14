@@ -47,7 +47,7 @@ export const Homepage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedSelectedCoins[0]),
+        body: JSON.stringify(updatedSelectedCoins[updatedSelectedCoins.length-1]),
       };
 
       await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
@@ -67,19 +67,24 @@ export const Homepage = () => {
 
   return (
     <div>
-      <header>Your Coins</header>
+
+     <div className=""></div>
+      <header className="">Your Coins</header>
       <div>
         <DataAPIUpdate />
       </div>
+      
+      
       <div>
         <select onChange={mySelectChange}>
           {data.map((coin) => (
             <option value={coin.coinName}>{coin.coinName}</option>
           ))}
         </select>
+        
         <div>
           {jsonServerApiCoins.map((coin) => (
-            <div key={coin.coinName + coin.coinPrice}>
+            <div className="" key={coin.coinName + coin.coinPrice}>
               <h1>{coin.coinName}</h1>
               <h1>{coin.coinPrice}</h1>
             </div>
