@@ -34,6 +34,61 @@
       "coinName": "XRP",
       "coinPrice": "0.383244",
       "id": 4
+    },
+    {
+      "coinName": "Binance USD",
+      "coinPrice": "1.00",
+      "id": 5
+    },
+    {
+      "coinName": "ChainLink",
+      "coinPrice": "6.94",
+      "id": 6
+    },
+    {
+      "coinName": "Binance USD",
+      "coinPrice": "0.999786",
+      "id": 7
+    },
+    {
+      "coinName": "Cardano",
+      "coinPrice": "0.314135",
+      "id": 8
+    },
+    {
+      "coinName": "Litecoin",
+      "coinPrice": "77.43",
+      "id": 9
+    },
+    {
+      "coinName": "Tether",
+      "coinPrice": "0.997662",
+      "id": 10
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.29",
+      "id": 11
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.29",
+      "id": 12
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.29",
+      "id": 13
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.29",
+      "id": 14
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.29",
+      "id": 15
     }
   ],
   "crypto": [

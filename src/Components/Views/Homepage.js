@@ -33,17 +33,13 @@ export const Homepage = () => {
     console.log(setjsonServerApiCoins);
   }, []);
 
-  const mySelectChange = (event) => {
+  const mySelectChange = async (event) => {
     const coinValue = event.target.value;
     console.log(data);
     const selectedCoin = data.filter((coin) => coin.coinName === coinValue)[0];
     const updatedSelectedCoins = [...selectedCoins, selectedCoin];
-    
-    // setSelectedCoins(updatedSelectedCoins);
 
-    // console.log(selectedCoins);
-
-    // const selectedCoinsVar = selectedCoins;
+    setSelectedCoins(updatedSelectedCoins);
 
     const mySelectApiPost = async () => {
       const fetchOptions = {
@@ -63,7 +59,7 @@ export const Homepage = () => {
       );
     }
 
-    mySelectApiPost();
+    await mySelectApiPost();
     jsonServerApiCoinsFetchTwo();
   };
 
