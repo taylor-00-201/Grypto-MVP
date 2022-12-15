@@ -12,23 +12,152 @@
       "fullName": "Corwin Dickey",
       "isStaff": false,
       "id": 2
+    },
+    {
+      "email": "ajbott2320@gmail.com",
+      "fullName": "Austin Bott",
+      "isStaff": false,
+      "id": 3
     }
   ],
   "SavedCrypto": [
     {
       "id": 1,
       "coinName": "Binance USD",
-      "coinPrice": "1.00"
+      "coinPrice": "1.00",
+      "userId": 1
     },
     {
-      "coinName": "Binance Coin",
-      "coinPrice": "273.25",
+      "coinName": "Shiba Inu",
+      "coinPrice": "0.000009",
       "id": 2
     },
     {
-      "coinName": "Litecoin",
-      "coinPrice": "77.79",
+      "coinName": "Binance Coin",
+      "coinPrice": "268.34",
       "id": 3
+    },
+    {
+      "coinName": "Solana",
+      "coinPrice": "14.14",
+      "id": 4
+    },
+    {
+      "coinName": "Binance Coin",
+      "coinPrice": "268.02",
+      "id": 5
+    },
+    {
+      "coinName": "UNUS SED LEO",
+      "coinPrice": "3.77",
+      "id": 6
+    },
+    {
+      "coinName": "Dogecoin",
+      "coinPrice": "0.088370",
+      "id": 7
+    },
+    {
+      "coinName": "Ethereum",
+      "coinPrice": "1308.00",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "coinName": "Shiba Inu",
+      "coinPrice": "0.000009",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "coinName": "Loopring",
+      "coinPrice": "0.245686",
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "coinName": "Klaytn",
+      "coinPrice": "0.177961",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "coinName": "Lido DAO",
+      "coinPrice": "1.14",
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "coinName": "Solana",
+      "coinPrice": "14.21",
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "coinName": "Avalanche",
+      "coinPrice": "13.78",
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "coinName": "XRP",
+      "coinPrice": "0.385605",
+      "userId": 2,
+      "id": 15
+    },
+    {
+      "coinName": "TRON",
+      "coinPrice": "0.055643",
+      "userId": 2,
+      "id": 16
+    },
+    {
+      "coinName": "Cosmos",
+      "coinPrice": "9.61",
+      "userId": 2,
+      "id": 17
+    },
+    {
+      "coinName": "1inch",
+      "coinPrice": "0.431588",
+      "userId": 2,
+      "id": 18
+    },
+    {
+      "coinName": "Dogecoin",
+      "coinPrice": "0.088534",
+      "userId": 3,
+      "id": 19
+    },
+    {
+      "coinName": "Polkadot",
+      "coinPrice": "5.20",
+      "userId": 1,
+      "id": 20
+    },
+    {
+      "coinName": "UNUS SED LEO",
+      "coinPrice": "3.77",
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "coinName": "Decentraland",
+      "coinPrice": "0.380117",
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "coinName": "TerraClassicUSD",
+      "coinPrice": "0.024255",
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "coinName": "1inch",
+      "coinPrice": "0.430387",
+      "userId": 1,
+      "id": 24
     }
   ],
   "crypto": [
