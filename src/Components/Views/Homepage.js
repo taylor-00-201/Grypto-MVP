@@ -4,13 +4,36 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DataAPIUpdate } from "./DataAPIUpdate";
+import { Delete } from "./Delete";
 
 export const Homepage = () => {
   const [data, setData] = useState([]);
   const [selectedCoins, setSelectedCoins] = useState([]);
   const [jsonServerApiCoins, setjsonServerApiCoins] = useState([]);
 
+  const userId = JSON.parse(localStorage.getItem("crypto_user")).id;
+
   const navigate = useNavigate();
+
+  const postRequest = async (data) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
+  };
+
+  const fetchCoins = () => {
+    fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
+      response.json().then((data) => {
+        const userCoins = data.filter((x) => x.userId === userId);
+        setjsonServerApiCoins(userCoins);
+      })
+    );
+  };
 
   useEffect(() => {
     fetch(`https://api.coinlore.net/api/tickers/`).then((response) =>
@@ -23,13 +46,7 @@ export const Homepage = () => {
       })
     );
 
-    function jsonServerApiCoinsFetch() {
-      fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
-        response.json().then((data) => setjsonServerApiCoins(data))
-      );
-    }
-
-    jsonServerApiCoinsFetch();
+    fetchCoins();
     console.log(setjsonServerApiCoins);
   }, []);
 
@@ -37,32 +54,15 @@ export const Homepage = () => {
     const coinValue = event.target.value;
     console.log(data);
     const selectedCoin = data.filter((coin) => coin.coinName === coinValue)[0];
+    const user = JSON.parse(localStorage.getItem("crypto_user"));
+    selectedCoin["userId"] = user.id;
     const updatedSelectedCoins = [...selectedCoins, selectedCoin];
 
     setSelectedCoins(updatedSelectedCoins);
 
-    const mySelectApiPost = async () => {
-      const fetchOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-          updatedSelectedCoins[updatedSelectedCoins.length - 1]
-        ),
-      };
+    await postRequest(updatedSelectedCoins[updatedSelectedCoins.length - 1]);
 
-      await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
-    };
-
-    function jsonServerApiCoinsFetchTwo() {
-      fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
-        response.json().then((data) => setjsonServerApiCoins(data))
-      );
-    }
-
-    await mySelectApiPost();
-    jsonServerApiCoinsFetchTwo();
+    fetchCoins();
   };
 
   console.log(selectedCoins);
@@ -93,11 +93,9 @@ export const Homepage = () => {
               <h1 className="bg-gray-400 text-green-900 text-5xl m-1 ">
                 ($ {coin.coinPrice})
               </h1>
+              <Delete coinId={coin.id} onDeleteCallback={fetchCoins} />
             </div>
           ))}
-          <div className="bg-gray-400 text-green-900 text-5xl m-1">
-            Delete Coin
-          </div>
         </div>
       </div>
     </div>
