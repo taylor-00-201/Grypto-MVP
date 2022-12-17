@@ -77,7 +77,6 @@ export const Homepage = () => {
   return (
     <div className="bg-purple-700">
       <div>
-        <header className="">Your Coins</header>
         <div>
           <DataAPIUpdate />
         </div>
