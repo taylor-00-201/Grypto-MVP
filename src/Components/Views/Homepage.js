@@ -65,7 +65,9 @@ export const Homepage = () => {
     fetchCoins();
   };
 
-  console.log(selectedCoins);
+  console.log(jsonServerApiCoins);
+
+  const navigateFn = () => navigate("/account"); 
 
   return (
     <div className="bg-purple-700">
@@ -76,17 +78,25 @@ export const Homepage = () => {
         </div>
       </div>
 
+      <button onClick={navigateFn}>Account Details</button>
+      <button>Logout</button>
+
       <div className="">
         <h1>Select Your Coin</h1>
         <select onChange={mySelectChange}>
           {data.map((coin) => (
-            <option value={coin.coinName}>{coin.coinName}</option>
+            <option
+              key={coin.coinName + coin.coinPrice + Math.random()}
+              value={coin.coinName}
+            >
+              {coin.coinName}
+            </option>
           ))}
         </select>
 
         <div className="flex outline-black flex-wrap p-10 space-x-2">
           {jsonServerApiCoins.map((coin) => (
-            <div key={coin.coinName + coin.coinPrice}>
+            <div key={coin.coinName + coin.coinPrice + Math.random()}>
               <h1 className="bg-gray-400 text-red-900 text-5xl m-1">
                 {coin.coinName}
               </h1>

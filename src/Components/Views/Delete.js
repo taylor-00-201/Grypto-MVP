@@ -1,4 +1,5 @@
-export const Delete = (coinId, onDeleteCallback) => {
+export const Delete = (props) => {
+  console.log(props.coinId)
   const deleteRequest = async () => {
     const fetchOptions = {
       method: "DELETE",
@@ -6,8 +7,11 @@ export const Delete = (coinId, onDeleteCallback) => {
         "Content-Type": "application/json",
       },
     };
-    await fetch(`http://localhost:8088/SavedCrypto?id=${coinId}`, fetchOptions);
-    onDeleteCallback();
+
+    const onDeleteCallback = props.onDeleteCallback;
+    
+    await fetch(`http://localhost:8088/SavedCrypto/${props.coinId}`, fetchOptions);
+  onDeleteCallback()
   };
 
   return <button onClick={() => deleteRequest()}>Delete Coin</button>;

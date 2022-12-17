@@ -1,13 +1,6 @@
 {
   "user": [
     {
-      "id": 1,
-      "email": "taylor00201@gmail.com",
-      "nameFirst": "Taylor",
-      "nameLast": "Evans",
-      "password": "asdf1234"
-    },
-    {
       "email": "cdickey@gmail.com",
       "fullName": "Corwin Dickey",
       "isStaff": false,
@@ -18,15 +11,15 @@
       "fullName": "Austin Bott",
       "isStaff": false,
       "id": 3
+    },
+    {
+      "email": "taylor00201@gmail.com",
+      "fullName": "Taylor Evans",
+      "isStaff": true,
+      "id": 1
     }
   ],
   "SavedCrypto": [
-    {
-      "id": 1,
-      "coinName": "Binance USD",
-      "coinPrice": "1.00",
-      "userId": 1
-    },
     {
       "coinName": "Shiba Inu",
       "coinPrice": "0.000009",
@@ -56,18 +49,6 @@
       "coinName": "Dogecoin",
       "coinPrice": "0.088370",
       "id": 7
-    },
-    {
-      "coinName": "Ethereum",
-      "coinPrice": "1308.00",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "coinName": "Shiba Inu",
-      "coinPrice": "0.000009",
-      "userId": 1,
-      "id": 9
     },
     {
       "coinName": "Loopring",
@@ -130,32 +111,8 @@
       "id": 19
     },
     {
-      "coinName": "Polkadot",
-      "coinPrice": "5.20",
-      "userId": 1,
-      "id": 20
-    },
-    {
-      "coinName": "UNUS SED LEO",
-      "coinPrice": "3.77",
-      "userId": 1,
-      "id": 21
-    },
-    {
-      "coinName": "Decentraland",
-      "coinPrice": "0.380117",
-      "userId": 1,
-      "id": 22
-    },
-    {
-      "coinName": "TerraClassicUSD",
-      "coinPrice": "0.024255",
-      "userId": 1,
-      "id": 23
-    },
-    {
-      "coinName": "1inch",
-      "coinPrice": "0.430387",
+      "coinName": "Tether",
+      "coinPrice": "1.00",
       "userId": 1,
       "id": 24
     }
