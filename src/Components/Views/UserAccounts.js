@@ -32,12 +32,12 @@ export const UserAccounts = () => {
   };
 
   return (
-    <div key={initialAccount.email}>
-      <h1>User Email: {initialAccount.email}</h1>
-      <h1>Name: {initialAccount.fullName}</h1>
+    <div className="bg-blue-600" key={initialAccount.email}>
+      <h1 className="bg-pink-600">User Email: {initialAccount.email}</h1>
+      <h1 className="bg-pink-600">Name: {initialAccount.fullName}</h1>
 
-      <label>Email</label>
-      <input
+      <label className="flex-wrap p-5 m-4">Email</label>
+      <input className="bg-green-600"
         value={account.email}
         autoFocus
         onChange={(event) => {
@@ -46,8 +46,8 @@ export const UserAccounts = () => {
           setAccount(copy);
         }}
       />
-      <label>Full Name</label>
-      <input
+      <label className="flex-wrap p-5 m-4">Full Name</label>
+      <input className="bg-green-600"
         autoFocus
         value={account.fullName}
         onChange={(event) => {
@@ -56,7 +56,7 @@ export const UserAccounts = () => {
           setAccount(copy);
         }}
       />
-      <button onClick={userPut}>Save</button>
+      <button className="bg-purple-900" onClick={userPut}>Save</button>
     </div>
   );
 };

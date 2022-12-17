@@ -1,14 +1,8 @@
 {
   "user": [
     {
-      "email": "html.com",
-      "fullName": "Html Jim",
-      "isStaff": true,
-      "id": 1
-    },
-    {
-      "email": "json_jim@gmail.com",
-      "fullName": "Json Jim",
+      "email": "taylor00201@gmail.com",
+      "fullName": "Taylor Evans",
       "isStaff": true,
       "id": 2
     },
@@ -31,12 +25,6 @@
       "coinPrice": "0.999235",
       "userId": 2,
       "id": 2
-    },
-    {
-      "coinName": "Wrapped Bitcoin",
-      "coinPrice": "16637.35",
-      "userId": 2,
-      "id": 3
     },
     {
       "coinName": "XRP",
@@ -67,6 +55,18 @@
       "coinPrice": "11.39",
       "userId": 3,
       "id": 8
+    },
+    {
+      "coinName": "TRON",
+      "coinPrice": "0.053737",
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "coinName": "Uniswap",
+      "coinPrice": "5.37",
+      "userId": 2,
+      "id": 10
     }
   ],
   "crypto": [
