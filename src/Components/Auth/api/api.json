@@ -67,6 +67,12 @@
       "coinPrice": "5.37",
       "userId": 2,
       "id": 10
+    },
+    {
+      "coinName": "Dogecoin",
+      "coinPrice": "0.077726",
+      "userId": 2,
+      "id": 11
     }
   ],
   "crypto": [
