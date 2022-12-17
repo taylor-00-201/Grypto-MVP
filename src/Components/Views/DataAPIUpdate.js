@@ -1,37 +1,27 @@
-import { useEffect, useState } from "react";
-
 export const DataAPIUpdate = () => {
-  const [cryptoData, setCryptoData] = useState(null);
-
   const updateCryptoData = () => {
     fetch("https://api.coinlore.net/api/tickers/")
       .then((response) => response.json())
-      .then((data) => setCryptoData(data.data));
+      .then((data) => {
+        console.log(data);
+        apiPost(data.data);
+      });
   };
 
-  const apiDataVar = cryptoData;
-
-  const handleCryptoDataUpdate = (data) => {
-    apiPost(apiDataVar);
-  };
-
-  const apiPost = async (apiDataVar) => {
-    apiDataVar.preventDefault();
-
+  const apiPost = async (data) => {
+    console.log(data);
     const fetchOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(apiDataVar),
+      body: JSON.stringify(data),
     };
+
+    console.log(fetchOptions);
 
     await fetch(`http://localhost:8088/crypto`, fetchOptions);
   };
 
-  const appTrue = true;
-
-  return (
-    <button onClick={() => handleCryptoDataUpdate()}>Click To Update</button>
-  );
+  return <button onClick={updateCryptoData}>Click To Update</button>;
 };

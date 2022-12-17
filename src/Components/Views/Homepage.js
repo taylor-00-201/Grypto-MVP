@@ -67,7 +67,12 @@ export const Homepage = () => {
 
   console.log(jsonServerApiCoins);
 
-  const navigateFn = () => navigate("/account"); 
+  const navigateFn = () => navigate("/account");
+  const navigateLogout = () => navigate("/login"); 
+
+
+
+
 
   return (
     <div className="bg-purple-700">
@@ -77,12 +82,14 @@ export const Homepage = () => {
           <DataAPIUpdate />
         </div>
       </div>
-
-      <button onClick={navigateFn}>Account Details</button>
-      <button>Logout</button>
-
-      <div className="">
-        <h1>Select Your Coin</h1>
+    
+     <div>
+      <button className="text-pink-900 text-2xl m-1 flex" onClick={navigateFn}>Account Details</button>
+      <button className="text-pink-900 text-2xl m-1 flex" onClick={navigateLogout}>Logout</button>
+      </div>
+ 
+      <div>
+        <h1 className="text-black-900 text-2xl m-1">Select Your Coin</h1>
         <select onChange={mySelectChange}>
           {data.map((coin) => (
             <option

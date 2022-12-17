@@ -1,37 +1,62 @@
 import { useEffect, useState } from "react";
 
 export const UserAccounts = () => {
-  const [accountState, setAccountState] = useState([]);
+  const [account, setAccount] = useState([]);
+  const [initialAccount, setInitialAccount] = useState([]);
 
   const userLocal = JSON.parse(localStorage.getItem("crypto_user"));
 
   useEffect(() => {
     fetch(`http://localhost:8088/user`).then((response) =>
-      response.json().then((data) => {
-        const userData = data.map((user) => ({
-          id: user.id,
-          email: user.email,
-          fullName: user.fullName,
-          isStaff: user.isStaff,
-        }));
-        setAccountState(userData);
-        console.log(userData);
+      response.json().then((users) => {
+        console.log(users);
+
+        const currentUser = users.filter((user) => user.id === userLocal.id)[0];
+        setAccount(currentUser);
+        setInitialAccount(currentUser);
       })
     );
-
-    console.log(accountState);
   }, []);
 
-  const localFilter = accountState.map((user) => {
-    if (user.id === userLocal.id) {
-      return (
-        <div key={user.email}>
-          <input>User Email: {user.email}</input>
-          <input>User Name: {user.fullName}</input>
-        </div>
-      );
-    }
-  });
+  const userPut = async () => {
+    const userId = account.id;
+    console.log(account);
+    const fetchOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(account),
+    };
+    await fetch(`http://localhost:8088/user/${userId}`, fetchOptions);
+  };
 
-  return <h1>{localFilter}</h1>;
+  return (
+    <div key={initialAccount.email}>
+      <h1>User Email: {initialAccount.email}</h1>
+      <h1>Name: {initialAccount.fullName}</h1>
+
+      <label>Email</label>
+      <input
+        value={account.email}
+        autoFocus
+        onChange={(event) => {
+          const copy = { ...account };
+          copy.email = event.target.value;
+          setAccount(copy);
+        }}
+      />
+      <label>Full Name</label>
+      <input
+        autoFocus
+        value={account.fullName}
+        onChange={(event) => {
+          const copy = { ...account };
+          copy.fullName = event.target.value;
+          setAccount(copy);
+        }}
+      />
+      <button onClick={userPut}>Save</button>
+    </div>
+  );
 };
