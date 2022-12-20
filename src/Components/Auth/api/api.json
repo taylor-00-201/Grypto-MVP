@@ -7,8 +7,8 @@
       "id": 1
     },
     {
-      "email": "htmlJim@gmail.com",
-      "fullName": "Html Jim",
+      "email": "htmlJim2000@gmail.com",
+      "fullName": "Html J Jim",
       "isStaff": false,
       "id": 2
     }
@@ -42,12 +42,6 @@
       "coinName": "Avalanche",
       "coinPrice": "11.83",
       "userId": 2,
-      "id": 5
-    },
-    {
-      "coinName": "Avalanche",
-      "coinPrice": "11.83",
-      "userId": 2,
       "id": 6
     },
     {
@@ -73,6 +67,30 @@
       "coinPrice": "45.81",
       "userId": 1,
       "id": 10
+    },
+    {
+      "coinName": "Mina Protocol",
+      "coinPrice": "0.473752",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "coinName": "eCash",
+      "coinPrice": "0.000023",
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "coinName": "TRON",
+      "coinPrice": "0.053898",
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "coinName": "USD Coin",
+      "coinPrice": "1.00",
+      "userId": 2,
+      "id": 14
     }
   ],
   "crypto": [

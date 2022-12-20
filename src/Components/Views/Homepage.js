@@ -68,27 +68,33 @@ export const Homepage = () => {
   console.log(jsonServerApiCoins);
 
   const navigateFn = () => navigate("/account");
-  const navigateLogout = () => navigate("/login"); 
-
-
-
-
+  const navigateLogout = () => navigate("/login");
 
   return (
-    <div className="bg-purple-700">
+    <div className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
       <div>
-        <div>
+        <div className="py-10">
           <DataAPIUpdate />
         </div>
       </div>
-    
-     <div>
-      <button className="text-pink-900 text-2xl m-1 flex" onClick={navigateFn}>Account Details</button>
-      <button className="text-pink-900 text-2xl m-1 flex" onClick={navigateLogout}>Logout</button>
-      </div>
- 
+
       <div>
-        <h1 className="text-black-900 text-2xl m-1">Select Your Coin</h1>
+        <button
+          className="text-black-900 text-2xl m-1 flex"
+          onClick={navigateFn}
+        >
+          Account Details
+        </button>
+        <button
+          className="text-black-900 text-2xl m-1 flex"
+          onClick={navigateLogout}
+        >
+          Logout
+        </button>
+      </div>
+
+      <div>
+        <h1 className="bg-black-700 text-black-200 text-8xl m-1 font-serif italic shadow-lg">Select Your Coin</h1>
         <select onChange={mySelectChange}>
           {data.map((coin) => (
             <option
@@ -100,13 +106,13 @@ export const Homepage = () => {
           ))}
         </select>
 
-        <div className="flex outline-black flex-wrap p-10 space-x-2">
+        <div className="flex outline-black flex-wrap p-10 box-border">
           {jsonServerApiCoins.map((coin) => (
-            <div key={coin.coinName + coin.coinPrice + Math.random()}>
-              <h1 className="bg-gray-400 text-red-900 text-5xl m-1">
+            <div className="border-black border-opacity-0 px-1 m-2 border-2" key={coin.coinName + coin.coinPrice + Math.random()}>
+              <h1 className="bg-red-500 text-black-900 text-5xl m-1">
                 {coin.coinName}
               </h1>
-              <h1 className="bg-gray-400 text-green-900 text-5xl m-1 ">
+              <h1 className="bg-gray-400 text-black-900 text-3xl m-1 ">
                 ($ {coin.coinPrice})
               </h1>
               <Delete coinId={coin.id} onDeleteCallback={fetchCoins} />

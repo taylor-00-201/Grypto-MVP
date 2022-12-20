@@ -32,17 +32,20 @@ export const UserAccounts = () => {
   };
 
   return (
-    <div className="bg-blue-600 outline-black p-2" key={initialAccount.email}>
-      <h1 className="bg-pink-600 outline-black text-5xl p-2">
+    <div
+      className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg"
+      key={initialAccount.email}
+    >
+      <h1 className="bg-green-800 outline-black text-5xl p-2">
         User Email: {initialAccount.email}
       </h1>
-      <h1 className="bg-pink-600 outline-black text-5xl p-2">
+      <h1 className="bg-green-800 outline-black text-5xl p-2">
         Name: {initialAccount.fullName}
       </h1>
 
       <label className="flex-wrap p-5 m-4 outline-black p-2">Email</label>
       <input
-        className="bg-green-600 outline-black m-4 p-2"
+        className="bg-white outline-black m-4 p-2"
         value={account.email}
         autoFocus
         onChange={(event) => {
@@ -53,7 +56,7 @@ export const UserAccounts = () => {
       />
       <label className="flex-wrap p-5 m-4 p-2">Full Name</label>
       <input
-        className="bg-green-600 p-2 m-4"
+        className="bg-white p-2 m-4"
         autoFocus
         value={account.fullName}
         onChange={(event) => {
@@ -62,11 +65,11 @@ export const UserAccounts = () => {
           setAccount(copy);
         }}
       />
-      <button className="bg-purple-900 outline-black m-4 p-2" onClick={userPut}>
+      <button className="bg-red-500 outline-black m-4 p-2" onClick={userPut}>
         Save
       </button>
       <button
-        className="bg-purple-900 outline-black m-4 p-2"
+        className="bg-red-500 outline-black m-4 p-2"
         onClick={navigateHome}
       >
         Go Home
