@@ -31,8 +31,8 @@ export const Login = () => {
   };
 
   return (
-    <main className="container--login">
-      <section>
+    <main className="container--login ">
+      <section className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
         <form className="form--login" onSubmit={handleLogin}>
           <h1>Grypto</h1>
           <h2>Please sign in</h2>
