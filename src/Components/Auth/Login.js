@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
 
 export const Login = () => {
   const [email, set] = useState("taylor00201@gmail.com");
@@ -31,31 +30,42 @@ export const Login = () => {
   };
 
   return (
-    <main className="container--login ">
-      <section className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
-        <form className="form--login" onSubmit={handleLogin}>
-          <h1>Grypto</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
-            <label htmlFor="inputEmail"> Email address </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(evt) => set(evt.target.value)}
-              className="form-control"
-              placeholder="Email address"
-              required
-              autoFocus
-            />
-          </fieldset>
-          <fieldset>
-            <button type="submit">Sign in</button>
-          </fieldset>
-        </form>
-      </section>
-      <section className="link--register">
-        <Link to="/register">Not a member yet?</Link>
-      </section>
-    </main>
+    <html className="h-screen h-full text-black text-5xl m-1 font-serif italic shadow-lg bg-blue-400">
+      <head>
+        <meta
+          charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+      </head>
+      <body>
+        <main>
+          <section>
+            <form className="form--login" onSubmit={handleLogin}>
+              <h1>Welcome to Grypto</h1>
+              <h2 className="text-white p-2 m-2">Please sign in</h2>
+              <fieldset>
+                <label htmlFor="inputEmail"> Enter Email address </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(evt) => set(evt.target.value)}
+                  className="form-control"
+                  placeholder="Email address"
+                  required
+                  autoFocus
+                />
+              </fieldset>
+              <fieldset>
+                <button className="border-2 p-2 m-5 bg-yellow-400" type="submit">Sign in</button>
+              </fieldset>
+            </form>
+          </section>
+          <section>
+            <Link className="border-2 p-2 m-5 bg-yellow-400" to="/register">Not a member yet?</Link>
+          </section>
+        </main>
+      </body>
+    </html>
   );
 };
