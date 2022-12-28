@@ -1,7 +1,7 @@
 {
   "user": [
     {
-      "email": "taylor00201_helloworld@gmail.com",
+      "email": "taylor00201@gmail.com",
       "fullName": "Taylor K Evans",
       "isStaff": true,
       "id": 1
@@ -45,30 +45,6 @@
       "id": 6
     },
     {
-      "coinName": "Dogecoin",
-      "coinPrice": "0.077120",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "coinName": "Solana",
-      "coinPrice": "12.17",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "coinName": "PAX Gold",
-      "coinPrice": "1803.68",
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "coinName": "Bitcoin SV",
-      "coinPrice": "45.81",
-      "userId": 1,
-      "id": 10
-    },
-    {
       "coinName": "Mina Protocol",
       "coinPrice": "0.473752",
       "userId": 2,
@@ -91,6 +67,48 @@
       "coinPrice": "1.00",
       "userId": 2,
       "id": 14
+    },
+    {
+      "coinName": "Binance Coin",
+      "coinPrice": "244.47",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "coinName": "Avalanche",
+      "coinPrice": "11.68",
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "coinName": "Uniswap",
+      "coinPrice": "5.22",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "coinName": "Cosmos",
+      "coinPrice": "8.99",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "coinName": "Solana",
+      "coinPrice": "11.48",
+      "userId": 1,
+      "id": 20
+    },
+    {
+      "coinName": "USD Coin",
+      "coinPrice": "1.00",
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "coinName": "Cosmos",
+      "coinPrice": "8.99",
+      "userId": 1,
+      "id": 22
     }
   ],
   "crypto": [

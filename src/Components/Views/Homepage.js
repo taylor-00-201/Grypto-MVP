@@ -71,22 +71,22 @@ export const Homepage = () => {
   const navigateLogout = () => navigate("/login");
 
   return (
-    <div className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
+    <div className="h-screen h-full bg-blue-400 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
       <div>
-        <div className="py-10">
+        <div className="text-yellow-00">
           <DataAPIUpdate />
         </div>
       </div>
 
       <div>
         <button
-          className="text-black-900 text-2xl m-1 flex"
+          className="text-white text-2xl m-1 flex"
           onClick={navigateFn}
         >
           Account Details
         </button>
         <button
-          className="text-black-900 text-2xl m-1 flex"
+          className="text-white text-2xl m-1 flex"
           onClick={navigateLogout}
         >
           Logout
@@ -94,10 +94,12 @@ export const Homepage = () => {
       </div>
 
       <div>
-        <h1 className="bg-black-700 text-black-200 text-8xl m-1 font-serif italic shadow-lg">Select Your Coin</h1>
-        <select onChange={mySelectChange}>
+        <h1 className="text-black text-8xl m-1 font-serif italic shadow-lg">
+          Select Your Coin
+        </h1>
+        <select className="bg-yellow-400 text-blue-900" onChange={mySelectChange}>
           {data.map((coin) => (
-            <option
+            <option className="border-black"
               key={coin.coinName + coin.coinPrice + Math.random()}
               value={coin.coinName}
             >
@@ -106,16 +108,21 @@ export const Homepage = () => {
           ))}
         </select>
 
-        <div className="flex outline-black flex-wrap p-10 box-border">
+        <div className="border-2 p-2 m-5 flex-wrap p-10 box-border border-black flex">
           {jsonServerApiCoins.map((coin) => (
-            <div className="border-black border-opacity-0 px-1 m-2 border-2" key={coin.coinName + coin.coinPrice + Math.random()}>
-              <h1 className="bg-red-500 text-black-900 text-5xl m-1">
+            <div
+              className="border-black border-opacity-0 px-1 m-2 border-2"
+              key={coin.coinName + coin.coinPrice + Math.random()}
+            >
+              <h1 className="bg-yellow-400 text-black text-5xl m-1">
                 {coin.coinName}
               </h1>
-              <h1 className="bg-gray-400 text-black-900 text-3xl m-1 ">
+              <h1 className="bg-white text-black text-3xl m-1 ">
                 ($ {coin.coinPrice})
               </h1>
-              <Delete coinId={coin.id} onDeleteCallback={fetchCoins} />
+              <div className="text-black">
+                <Delete coinId={coin.id} onDeleteCallback={fetchCoins} />
+              </div>
             </div>
           ))}
         </div>
