@@ -5,16 +5,19 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DataAPIUpdate } from "./DataAPIUpdate";
 import { Delete } from "./Delete";
+import { AllCoinsView } from "./AllCoinsView";
 
 export const Homepage = () => {
+  // these are the component state hooks
   const [data, setData] = useState([]);
   const [selectedCoins, setSelectedCoins] = useState([]);
   const [jsonServerApiCoins, setjsonServerApiCoins] = useState([]);
-
+  // this retrieves the value associated with the key from local storage as our user id
   const userId = JSON.parse(localStorage.getItem("crypto_user")).id;
 
   const navigate = useNavigate();
 
+  // this is the post method within the component that can be called when needed
   const postRequest = async (data) => {
     const fetchOptions = {
       method: "POST",
@@ -26,6 +29,7 @@ export const Homepage = () => {
     await fetch(`http://localhost:8088/SavedCrypto`, fetchOptions);
   };
 
+  // this is a fetch method within the component that can be called when needed
   const fetchCoins = () => {
     fetch(`http://localhost:8088/SavedCrypto`).then((response) =>
       response.json().then((data) => {
@@ -34,7 +38,7 @@ export const Homepage = () => {
       })
     );
   };
-
+  // this useeffect will run on render, it will fetch the coins from the external API, map over the data, creates an array of object from the fetch data and sets state with this data
   useEffect(() => {
     fetch(`https://api.coinlore.net/api/tickers/`).then((response) =>
       response.json().then((data) => {
@@ -50,6 +54,7 @@ export const Homepage = () => {
     console.log(setjsonServerApiCoins);
   }, []);
 
+  // this function adds a new coin to the dasboard for the user to track
   const mySelectChange = async (event) => {
     const coinValue = event.target.value;
     console.log(data);
@@ -69,9 +74,11 @@ export const Homepage = () => {
 
   const navigateFn = () => navigate("/account");
   const navigateLogout = () => navigate("/login");
+  const navigateAllCoins = () => navigate("/allcoins")
+  
 
   return (
-    <div className="h-screen h-full bg-blue-400 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
+    <div className="h-screen bg-blue-400 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
       <div>
         <div className="text-yellow-00">
           <DataAPIUpdate />
@@ -79,10 +86,7 @@ export const Homepage = () => {
       </div>
 
       <div>
-        <button
-          className="text-white text-2xl m-1 flex"
-          onClick={navigateFn}
-        >
+        <button className="text-white text-2xl m-1 flex" onClick={navigateFn}>
           Account Details
         </button>
         <button
@@ -91,15 +95,22 @@ export const Homepage = () => {
         >
           Logout
         </button>
+        <button className="text-white text-2xl m-1 flex" onClick={navigateAllCoins}>
+          All Coins
+        </button>
       </div>
 
       <div>
         <h1 className="text-black text-8xl m-1 font-serif italic shadow-lg">
           Select Your Coin
         </h1>
-        <select className="bg-yellow-400 text-blue-900" onChange={mySelectChange}>
+        <select
+          className="bg-yellow-400 text-blue-900"
+          onChange={mySelectChange}
+        >
           {data.map((coin) => (
-            <option className="border-black"
+            <option
+              className="border-black"
               key={coin.coinName + coin.coinPrice + Math.random()}
               value={coin.coinName}
             >
