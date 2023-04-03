@@ -11,10 +11,10 @@ export const UserViews = () => {
     <div className="gryptoMain">
       <Routes>
         <Route path="*" element={<Homepage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/allcoins" element={<AllCoinsView />} />
-          <Route path="/account" element={<UserAccounts />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/allcoins" element={<AllCoinsView />} />
+        <Route path="/account" element={<UserAccounts />} />
       </Routes>
     </div>
   );
