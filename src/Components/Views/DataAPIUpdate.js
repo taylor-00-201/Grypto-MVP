@@ -1,5 +1,5 @@
 export const DataAPIUpdate = () => {
-  // this fetches the coin data from the API, calls the apiPost Function, and passes the data into said function for insertion into the back end 
+  // this fetches the coin data from the API, calls the apiPost Function, and passes the data into said function for insertion into the back end
   const updateCryptoData = () => {
     fetch("https://api.coinlore.net/api/tickers/")
       .then((response) => response.json())

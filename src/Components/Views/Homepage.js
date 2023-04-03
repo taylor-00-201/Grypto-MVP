@@ -74,8 +74,7 @@ export const Homepage = () => {
 
   const navigateFn = () => navigate("/account");
   const navigateLogout = () => navigate("/login");
-  const navigateAllCoins = () => navigate("/allcoins")
-  
+  const navigateAllCoins = () => navigate("/allcoins");
 
   return (
     <div className="h-screen bg-blue-400 text-black-500 text-5xl m-1 font-serif italic shadow-lg">
@@ -95,7 +94,10 @@ export const Homepage = () => {
         >
           Logout
         </button>
-        <button className="text-white text-2xl m-1 flex" onClick={navigateAllCoins}>
+        <button
+          className="text-white text-2xl m-1 flex"
+          onClick={navigateAllCoins}
+        >
           All Coins
         </button>
       </div>

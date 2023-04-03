@@ -58,12 +58,19 @@ export const Login = () => {
                 />
               </fieldset>
               <fieldset>
-                <button className="border-2 p-2 m-5 bg-yellow-400" type="submit">Sign in</button>
+                <button
+                  className="border-2 p-2 m-5 bg-yellow-400"
+                  type="submit"
+                >
+                  Sign in
+                </button>
               </fieldset>
             </form>
           </section>
           <section>
-            <Link className="border-2 p-2 m-5 bg-yellow-400" to="/register">Not a member yet?</Link>
+            <Link className="border-2 p-2 m-5 bg-yellow-400" to="/register">
+              Not a member yet?
+            </Link>
           </section>
         </main>
       </body>
