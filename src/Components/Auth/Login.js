@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// this is Nashville Software School provided code provided as part of my E20 class capstone project to log in a user
 export const Login = () => {
   const [email, set] = useState("taylor00201@gmail.com");
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export const Login = () => {
   };
 
   return (
-    <html className="h-screen h-full text-black text-5xl m-1 font-serif italic shadow-lg bg-blue-400">
+    <html className="h-screen text-black text-5xl m-1 font-serif italic shadow-lg bg-blue-400">
       <head>
         <meta
           charset="UTF-8"

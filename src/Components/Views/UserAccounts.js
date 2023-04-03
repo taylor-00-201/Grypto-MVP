@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const UserAccounts = () => {
+  // component state
   const [account, setAccount] = useState([]);
   const [initialAccount, setInitialAccount] = useState([]);
 
@@ -9,6 +10,7 @@ export const UserAccounts = () => {
   const navigate = useNavigate();
   const navigateHome = () => navigate("/");
 
+  // this fetches the users from the api, if the user matches the value associated with the key from local storage as our user, that current user is passed into component state
   useEffect(() => {
     fetch(`http://localhost:8088/user`).then((response) =>
       response.json().then((users) => {
@@ -19,6 +21,7 @@ export const UserAccounts = () => {
     );
   }, []);
 
+  // this is a function to update the data in json server
   const userPut = async () => {
     const userId = account.id;
     const fetchOptions = {
@@ -32,14 +35,15 @@ export const UserAccounts = () => {
   };
 
   return (
+    // this is the returned jsx
     <div
-      className="bg-green-700 text-black-500 text-5xl m-1 font-serif italic shadow-lg"
+      className="h-screen bg-blue-400 text-black-500 text-5xl m-1 font-serif italic shadow-lg"
       key={initialAccount.email}
     >
-      <h1 className="bg-green-800 outline-black text-5xl p-2">
+      <h1 className="bg-yellow-400 outline-black text-5xl p-2">
         User Email: {initialAccount.email}
       </h1>
-      <h1 className="bg-green-800 outline-black text-5xl p-2">
+      <h1 className="bg-yellow-400 outline-black text-5xl p-2">
         Name: {initialAccount.fullName}
       </h1>
 
@@ -65,11 +69,11 @@ export const UserAccounts = () => {
           setAccount(copy);
         }}
       />
-      <button className="bg-red-500 outline-black m-4 p-2" onClick={userPut}>
+      <button className="bg-yellow-400 outline-black m-4 p-2" onClick={userPut}>
         Save
       </button>
       <button
-        className="bg-red-500 outline-black m-4 p-2"
+        className="bg-yellow-400 outline-black m-4 p-2"
         onClick={navigateHome}
       >
         Go Home
